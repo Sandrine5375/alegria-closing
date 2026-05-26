@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Alegria Closing - Muhammad</title>
+<title>Alegria Closing — Universal</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'Space Grotesk',sans-serif;overflow:hidden}
 .wrap{width:100%;height:100vh;display:flex;flex-direction:column}
-.nav{background:#151821;border-bottom:1px solid #2a2d3a;padding:10px 14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav{background:#151821;border-bottom:1px solid #2a2d3a;padding:10px 14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-height:50px}
 .nb{background:transparent;border:1px solid #2a2d3a;color:#e2e4ef;padding:7px 12px;border-radius:4px;cursor:pointer;font-size:12px;font-family:inherit;transition:.2s}
 .nb:hover{border-color:#7c3aed}
 .nb.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
@@ -19,7 +19,7 @@ html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'
 .left{flex:1;overflow-y:auto;padding:16px}
 .left::-webkit-scrollbar{width:3px}
 .left::-webkit-scrollbar-thumb{background:#2a2d3a}
-.right{width:300px;background:#151821;border:1px solid #2a2d3a;border-radius:4px;display:flex;flex-direction:column}
+.right{width:320px;background:#151821;border:1px solid #2a2d3a;border-radius:4px;display:flex;flex-direction:column}
 .rh{background:#1e2033;border-bottom:1px solid #2a2d3a;padding:10px 12px;font-size:11px;font-weight:600;color:#a78bfa;display:flex;justify-content:space-between}
 .rbtns{display:flex;gap:4px}
 .rb{background:transparent;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 8px;border-radius:3px;cursor:pointer;font-size:10px;transition:.2s}
@@ -37,10 +37,11 @@ html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'
 .st{color:#e2e4ef;line-height:1.5;font-size:13px}
 .tip{background:#0f3a1a;border-left:4px solid #2ecc71;padding:10px;margin:10px 0;border-radius:4px;color:#2ecc71;font-size:12px}
 .warn{background:#3a2f0f;border-left:4px solid #e05a2b;padding:10px;margin:10px 0;border-radius:4px;color:#e05a2b;font-size:12px}
+.silence{background:#2a2133;border-left:4px solid #a78bfa;padding:10px;margin:10px 0;border-radius:4px;color:#a78bfa;font-size:12px;font-style:italic}
 .bif{background:#151821;border:1px solid #2a2d3a;padding:12px;margin:10px 0;border-radius:4px}
 .bq{color:#a78bfa;font-weight:600;margin-bottom:8px;font-size:12px}
-.bbs{display:flex;gap:6px}
-.bc{flex:1;padding:6px 10px;border:1px solid #2a2d3a;background:transparent;color:#e2e4ef;border-radius:3px;cursor:pointer;font-size:11px;transition:.2s}
+.bbs{display:flex;gap:6px;flex-wrap:wrap}
+.bc{flex:1;padding:6px 10px;border:1px solid #2a2d3a;background:transparent;color:#e2e4ef;border-radius:3px;cursor:pointer;font-size:11px;transition:.2s;min-width:120px}
 .bc:hover{border-color:#7c3aed}
 .bc.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
 .br{margin-top:8px;padding:8px;background:#12131a;border-left:2px solid #7c3aed;color:#a78bfa;font-size:12px;display:none}
@@ -49,13 +50,19 @@ html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'
 .an{flex:1;background:#7c3aed;border:none;color:#fff;padding:10px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit}
 .ao{flex:1;background:transparent;border:1px solid #e05a2b;color:#e05a2b;padding:10px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit}
 .analysis{background:#1e2033;border:2px solid #7c3aed;border-radius:4px;padding:12px;margin-bottom:14px;display:none}
-.analysis.on{display:block}
-.ah{display:flex;justify-content:space-between;margin-bottom:8px}
+.analysis.on{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.ah{display:flex;justify-content:space-between;margin-bottom:8px;align-items:flex-start}
 .ap{font-weight:600;color:#a78bfa;font-size:12px}
-.al{font-size:10px;color:#6b7095;background:#12131a;padding:2px 6px;border-radius:2px}
+.al{font-size:10px;color:#6b7095;background:#12131a;padding:2px 6px;border-radius:2px;white-space:nowrap}
+.al.chaud{color:#2ecc71;border:1px solid #2ecc71}
+.al.tiede{color:#e0a82b;border:1px solid #e0a82b}
+.al.froid{color:#e05a2b;border:1px solid #e05a2b}
 .aa{background:#12131a;border-left:3px solid #e05a2b;padding:8px;margin-bottom:8px;color:#e05a2b;font-weight:600;font-size:11px}
-.aq{background:#12131a;border-left:3px solid #7c3aed;padding:8px;margin-bottom:8px;color:#a78bfa;font-size:12px}
-.sigs{display:flex;gap:6px;flex-wrap:wrap}
+.aq{background:#12131a;border-left:3px solid #7c3aed;padding:8px;margin-bottom:8px;color:#a78bfa;font-size:13px;font-weight:500}
+.atrans{background:#12131a;border-left:3px solid #2ecc71;padding:8px;margin-bottom:8px;color:#2ecc71;font-size:11px;display:none}
+.atrans.on{display:block}
+.sigs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
 .sig{background:#12131a;border:1px solid #2a2d3a;padding:3px 8px;border-radius:2px;font-size:10px;color:#6b7095}
 .sig.pos{border-color:#2ecc71;color:#2ecc71}
 .sig.vig{border-color:#e05a2b;color:#e05a2b}
@@ -65,7 +72,7 @@ html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'
 .ach.on{background:#7c3aed;border-color:#7c3aed}
 .at{font-weight:600;color:#a78bfa}
 .ach.on .at{color:#fff}
-.acb{display:none;background:#151821;border:1px solid #2a2d3a;border-top:none;padding:12px;border-radius:0 0 4px 4px;font-size:12px;color:#e2e4ef}
+.acb{display:none;background:#151821;border:1px solid #2a2d3a;border-top:none;padding:12px;border-radius:0 0 4px 4px;font-size:12px;color:#e2e4ef;line-height:1.7}
 .acb.on{display:block}
 .mt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
 .mc{background:#1e2033;border:1px solid #2a2d3a;padding:10px;border-radius:4px;text-align:center}
@@ -78,9 +85,30 @@ html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'
 .ci input{width:16px;height:16px;cursor:pointer;accent-color:#7c3aed}
 .cl{flex:1;color:#e2e4ef;cursor:pointer;font-size:12px}
 .st2{font-weight:600;color:#a78bfa;margin-top:14px;margin-bottom:8px;font-size:12px}
+/* MODAL NOUVEAU LEAD */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:1000;display:flex;align-items:center;justify-content:center}
+.modal{background:#151821;border:1px solid #7c3aed;border-radius:8px;padding:24px;width:600px;max-height:80vh;overflow-y:auto}
+.modal h2{color:#a78bfa;font-size:16px;margin-bottom:16px}
+.modal-tabs{display:flex;gap:8px;margin-bottom:20px}
+.modal-tab{flex:1;padding:8px;border:1px solid #2a2d3a;background:transparent;color:#e2e4ef;border-radius:4px;cursor:pointer;font-size:12px;font-family:inherit;transition:.2s}
+.modal-tab.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.modal-section{display:none}
+.modal-section.on{display:block}
+.modal textarea{width:100%;background:#12131a;border:1px solid #2a2d3a;color:#e2e4ef;padding:10px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;resize:vertical;min-height:120px}
+.modal input{width:100%;background:#12131a;border:1px solid #2a2d3a;color:#e2e4ef;padding:8px 10px;border-radius:4px;font-family:'Space Grotesk',sans-serif;font-size:12px;margin-bottom:8px}
+.modal label{color:#6b7095;font-size:11px;display:block;margin-bottom:4px}
+.btn-primary{background:#7c3aed;border:none;color:#fff;padding:10px 20px;border-radius:4px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;width:100%;margin-top:12px}
+.btn-primary:hover{background:#6d2ee0}
+.btn-secondary{background:transparent;border:1px solid #2a2d3a;color:#6b7095;padding:8px 16px;border-radius:4px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:12px}
+.loading{text-align:center;color:#a78bfa;padding:20px;font-size:13px}
+.offre-badge{display:inline-block;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600;margin-left:8px}
+.offre-success{background:rgba(124,58,237,.2);border:1px solid #7c3aed;color:#a78bfa}
+.offre-incubator{background:rgba(224,168,43,.15);border:1px solid #e0a82b;color:#e0a82b}
+.offre-mentoring{background:rgba(46,204,113,.15);border:1px solid #2ecc71;color:#2ecc71}
 </style>
 </head>
 <body>
+
 <div class="wrap">
   <div class="nav">
     <button class="nb on" onclick="show('profil',this)">Profil</button>
@@ -88,185 +116,382 @@ html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'
     <button class="nb" onclick="show('p2',this)">Phase 2</button>
     <button class="nb" onclick="show('p3',this)">Phase 3</button>
     <button class="nb" onclick="show('p4',this)">Phase 4</button>
+    <button class="nb" onclick="show('p5',this)">Vision</button>
     <button class="nb" onclick="show('offre',this)">Offre</button>
     <button class="nb" onclick="show('obj',this)">Objections</button>
     <button class="nb" onclick="show('check',this)">Checklist</button>
+    <button class="nb" style="border-color:#2ecc71;color:#2ecc71" onclick="openModal()">+ Nouveau lead</button>
     <div class="sb" id="status">⚫ Standby</div>
   </div>
+
   <div class="body">
     <div class="left">
+
+      <!-- PROFIL -->
       <div id="profil" class="panel on">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2a2d3a">
-          <div>
-            <div style="font-size:18px;font-weight:600">Muhammad Dine</div>
-            <div style="display:flex;gap:6px;margin-top:6px">
-              <span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">Salarié étouffé</span>
-              <span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">CDI · BP</span>
-              <span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">47k€</span>
-            </div>
+        <div id="profil-content">
+          <div style="text-align:center;padding:40px;color:#6b7095">
+            <div style="font-size:32px;margin-bottom:12px">👤</div>
+            <div style="font-size:14px;margin-bottom:8px">Aucun lead chargé</div>
+            <div style="font-size:12px">Cliquez sur <strong style="color:#2ecc71">+ Nouveau lead</strong> pour commencer</div>
           </div>
-          <div style="font-size:11px;color:#6b7095">29 mai, 16h (Google Meet)</div>
-        </div>
-        <div class="alert-bar"><strong style="color:#fff">⚠️ Objection prioritaire:</strong> Budget contraint (prêt étudiant)</div>
-        <div class="mt">
-          <div class="mc"><div class="ml">Motivation</div><div class="mb"><div class="mf" style="width:85%"></div></div><div class="mv">8.5/10</div></div>
-          <div class="mc"><div class="ml">Urgence</div><div class="mb"><div class="mf" style="width:60%"></div></div><div class="mv">6/10</div></div>
-          <div class="mc"><div class="ml">Clarté</div><div class="mb"><div class="mf" style="width:45%"></div></div><div class="mv">4.5/10</div></div>
-          <div class="mc"><div class="ml">Budget</div><div class="mb"><div class="mf" style="width:35%"></div></div><div class="mv">3.5/10</div></div>
-        </div>
-        <div style="background:#151821;border:1px solid #2a2d3a;padding:12px;border-radius:4px;font-size:12px;color:#6b7095;line-height:1.6">
-          <p><strong style="color:#a78bfa">Situation:</strong> Gestionnaire financement structuré · CDI 1 an · 47k€/an · Prêt étudiant jusqu'en 2030</p>
-          <p style="margin-top:8px"><strong style="color:#a78bfa">Douleur:</strong> Veut "être en avance sur l'air du temps"</p>
-          <p style="margin-top:8px"><strong style="color:#a78bfa">Objectif:</strong> Revenu complémentaire + compétences IA</p>
-          <p style="margin-top:8px"><strong style="color:#a78bfa">Mots clés:</strong> "en avance sur l'air du temps" · "j'essaie le maximum d'utiliser les IA"</p>
         </div>
       </div>
+
+      <!-- PHASE 1 -->
       <div id="p1" class="panel">
-        <div class="badge">Phase 1 · Confiance · 3-5 min</div>
+        <div class="badge">Phase 1 · Brisage de glace & cadrage · 3-5 min</div>
         <div id="an1" class="analysis"></div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">Merci Muhammad d'être là. Aujourd'hui je veux te montrer comment on peut t'aider à "être en avance sur l'air du temps" — c'est ce que tu m'as dit.</div></div>
-        <div class="tip">🟢 Reprendre exactement ses mots crée un rapport immédiat.</div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">L'idée c'est de te montrer comment on fonctionne chez Alegria et ce qu'on peut t'apporter pour développer tes compétences IA et créer ce revenu complémentaire.</div></div>
-        <div class="bif">
-          <div class="bq">Budget — sa réaction ?</div>
-          <div class="bbs">
-            <button class="bc" onclick="bif(this,'p1r1')">Reste difficile</button>
-            <button class="bc" onclick="bif(this,'p1r2')">Envie d'explorer</button>
-          </div>
-          <div id="p1r1" class="br">→ "Ok, on va faire ça intelligent. Je vais te montrer comment on travaille et après on verra comment financer. Deal ?"</div>
-          <div id="p1r2" class="br">→ "Super. On va explorer ensemble. Tu auras toutes les infos pour décider. Allons-y."</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st" id="p1-intro">Bonjour <span class="lead-prenom">[Prénom]</span>, comment allez-vous ? Vous m'entendez bien ? Vous me voyez bien ?</div>
         </div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Vous avez regardé les vidéos que je vous ai envoyées ?</div>
+        </div>
+        <div class="bif">
+          <div class="bq">Réponse sur les vidéos ?</div>
+          <div class="bbs">
+            <button class="bc" onclick="bif(this,'p1r1')">Oui regardées</button>
+            <button class="bc" onclick="bif(this,'p1r2')">Non pas regardées</button>
+          </div>
+          <div id="p1r1" class="br">→ "Très bien ! Qu'est-ce que vous avez le plus apprécié ?" — Rebondir sur ce qui stimule le lead.</div>
+          <div id="p1r2" class="br">→ "Pas de souci. Je vais vous expliquer l'essentiel pendant notre échange."</div>
+        </div>
+        <div class="sc">
+          <div class="sl">Sandrine — Cadrage</div>
+          <div class="st">L'objectif de cet appel est de faire un point sur votre situation actuelle, vos challenges et vos objectifs tout en reprenant ce qu'on avait vu ensemble. Si vous correspondez aux types de profils qu'on a l'habitude d'accompagner et avec qui on a du résultat, alors je vous orienterai sur l'accompagnement le plus adapté à votre profil. Est-ce que ça fait sens pour vous ?</div>
+        </div>
+        <div class="silence">🔵 Silence — laisser le prospect confirmer.</div>
         <div class="acts">
           <button class="an" onclick="showP('p2')">Phase 2 →</button>
           <button class="ao" onclick="showP('obj')">Objection</button>
         </div>
       </div>
+
+      <!-- PHASE 2 -->
       <div id="p2" class="panel">
-        <div class="badge">Phase 2 · Creusage · 10-14 min</div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">Tu m'as dit que tu "essaies le maximum d'utiliser les IA dans ta vie quotidienne". Dans quoi tu les utilises déjà ?</div></div>
-        <div class="bif">
-          <div class="bq">Ses usages IA ?</div>
-          <div class="bbs">
-            <button class="bc" onclick="bif(this,'p2r1')">ChatGPT, outils génériques</button>
-            <button class="bc" onclick="bif(this,'p2r2')">Juste intérêt</button>
-          </div>
-          <div id="p2r1" class="br">→ "Ok. Ce qu'on va faire c'est aller plus loin — créer de la valeur, des outils qui génèrent du revenu."</div>
-          <div id="p2r2" class="br">→ "Excellent. On va convertir cet intérêt en compétences concrètes et en revenu."</div>
+        <div class="badge">Phase 2 · Creusage douleur · 10-14 min</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Donnez-moi les 3 raisons concrètes qui vous ont motivé à venir à cet entretien aujourd'hui.</div>
         </div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">Sur le revenu complémentaire — tu as une idée de la hauteur ? 200€/mois ? 500€ ? 1000€ ?</div></div>
-        <div class="warn">🟠 Il cherchait formation gratuite. Creuse d'abord la motivation.</div>
+        <div class="tip">🟢 Si moins de 3 raisons → signal de faible motivation. Creuser ou raccourcir l'appel.</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Votre quotidien ressemble à quoi concrètement en ce moment ?</div>
+        </div>
+        <div class="sc">
+          <div class="sl">Sandrine — Ouvrir la douleur</div>
+          <div class="st">Qu'est-ce qui ne vous convient plus dans votre situation actuelle ? Soyez précis.<br><br>Ça a des répercussions sur quoi dans votre vie — pas juste le financier, dans l'ensemble ?<br><br>Ça dure depuis combien de temps cette situation ?</div>
+        </div>
+        <div class="sc">
+          <div class="sl">Sandrine — Ressenti</div>
+          <div class="st">Qu'est-ce que vous ressentez vis-à-vis de cette situation ?<br><br>Encore combien de temps vous êtes prêt à rester dans cette situation ?</div>
+        </div>
+        <div class="silence">🔵 Ne pas couper — laisser parler. Plus il parle, plus la douleur s'ouvre.</div>
+        <div class="sc">
+          <div class="sl">Sandrine — Coût de l'inaction</div>
+          <div class="st">Qu'est-ce que vous avez mis en place depuis ?<br><br>Concrètement, combien ça vous coûte de rester là où vous êtes — en argent, en temps, en énergie ?<br><br>Combien de temps vous pouvez rester dans votre situation actuelle avant que ça devienne vraiment problématique ?</div>
+        </div>
         <div class="acts">
           <button class="an" onclick="showP('p3')">Phase 3 →</button>
           <button class="ao" onclick="showP('obj')">Objection</button>
         </div>
       </div>
+
+      <!-- PHASE 3 — AMPLIFICATION -->
       <div id="p3" class="panel">
-        <div class="badge">Phase 3 · Offre · 8-10 min</div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">Chez Alegria, on forme des gens exactement comme toi à créer du revenu via l'IA et le NoCode. Voilà les 3 piliers:</div></div>
-        <div style="background:#1e2033;border:1px solid #7c3aed;padding:12px;margin:10px 0;border-radius:4px;font-size:12px">
-          <div style="margin-bottom:8px"><strong style="color:#a78bfa">1️⃣ Compétences IA</strong> — Maîtriser les IA, pas juste les utiliser.</div>
-          <div style="margin-bottom:8px"><strong style="color:#a78bfa">2️⃣ NoCode</strong> — Construis des outils. Zapier, Make, Airtable.</div>
-          <div><strong style="color:#a78bfa">3️⃣ Monétisation</strong> — Comment tu vends et tu trouves des clients.</div>
+        <div class="badge">Phase 3 · Amplification · 5-8 min</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Et si rien ne change dans les 6 prochains mois, vous vous voyez où ?</div>
         </div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">Tu commences à générer du revenu PENDANT la formation, pas après.</div></div>
-        <div class="tip">🟢 Il a un prêt jusqu'en 2030. Insiste sur la rapidité (8 semaines, pas 6 mois).</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Tu peux continuer comme ça combien de temps encore ?</div>
+        </div>
+        <div class="warn">🟠 Attendre la réponse. Ne pas couper. Laisser l'inconfort s'installer.</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Vous croyez vraiment que continuer seul va changer quelque chose ?</div>
+        </div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Cette version de vous que vous voulez devenir — elle accepterait encore cette situation ?</div>
+        </div>
+        <div class="silence">🔵 Silence 5-10 secondes — laisser la question faire son travail.</div>
         <div class="acts">
           <button class="an" onclick="showP('p4')">Phase 4 →</button>
           <button class="ao" onclick="showP('obj')">Objection</button>
         </div>
       </div>
+
+      <!-- PHASE 4 — GAP -->
       <div id="p4" class="panel">
-        <div class="badge">Phase 4 · Financement · 8-12 min</div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">Muhammad, ça t'intéresse vraiment ? Tu as des doutes ?</div></div>
-        <div class="bif">
-          <div class="bq">Intérêt ?</div>
-          <div class="bbs">
-            <button class="bc" onclick="bif(this,'p4r1')">Très intéressé</button>
-            <button class="bc" onclick="bif(this,'p4r2')">Hésitant</button>
-          </div>
-          <div id="p4r1" class="br">→ "Super. Notre programme coûte 1 997€ TTC. 3 façons de payer."</div>
-          <div id="p4r2" class="br">→ "Ok, dis-moi ce qui te bloque. On va l'adresser."</div>
+        <div class="badge">Phase 4 · Gap & ancrage · 5-8 min</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Maintenant dites-moi — si tout se passait exactement comme vous le voulez, à quoi ressemblerait votre vie dans 12 mois ?</div>
         </div>
-        <div style="background:#1e2033;border:1px solid #7c3aed;padding:12px;margin:10px 0;border-radius:4px;font-size:12px">
-          <div style="margin-bottom:8px"><strong style="color:#a78bfa">💰 1 × 1 997€</strong> — Paiement unique.</div>
-          <div style="margin-bottom:8px"><strong style="color:#a78bfa">📅 3 × 666€</strong> — 22€/jour.</div>
-          <div><strong style="color:#a78bfa">📅 4 × 499€</strong> — Moins de 17€/jour.</div>
+        <div class="sc">
+          <div class="sl">Sandrine — Créer le gap</div>
+          <div class="st">Donc d'un côté vous me dites <span id="douleur-recap" style="color:#e05a2b">[douleur du prospect]</span>. De l'autre, vous voulez <span id="vision-recap" style="color:#2ecc71">[vision du prospect]</span>. C'est ça le gap. Et la question c'est : qu'est-ce qui vous sépare de là où vous voulez être ?</div>
         </div>
-        <div class="sc"><div class="sl">Sandrine</div><div class="st">En 3×, c'est 666€/mois. Au bout de 3 semaines, tu as généré au moins ça en revenu. Deal ?</div></div>
+        <div class="tip">🟢 Reprendre SES mots exacts pour le douleur et la vision.</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Qu'est-ce que vous avez essayé jusqu'ici pour combler ce gap ? Pourquoi ça n'a pas marché ?</div>
+        </div>
         <div class="acts">
-          <button class="an" onclick="showP('offre')">Offre →</button>
+          <button class="an" onclick="showP('p5')">Phase Vision →</button>
           <button class="ao" onclick="showP('obj')">Objection</button>
         </div>
       </div>
-      <div id="offre" class="panel">
-        <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">AI & NoCode Success Program</h2>
-        <div style="background:#1e2033;border:1px solid #e05a2b;padding:14px;border-radius:4px;margin-bottom:14px">
-          <div style="color:#e05a2b;font-weight:600;font-size:18px;margin-bottom:10px">1 997€ TTC</div>
-          <div style="color:#e2e4ef;font-size:13px">· 3 × 666€ (22€/jour)<br>· 4 × 499€ (moins de 17€/jour)</div>
+
+      <!-- PHASE 5 — VISION -->
+      <div id="p5" class="panel">
+        <div class="badge">Phase 5 · Vision & qualification · 5-8 min</div>
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Imaginez que dans 6 mois, tout est réglé. Vous avez <span id="vision-detail" style="color:#2ecc71">[objectif du prospect]</span>. Qu'est-ce que ça change concrètement dans votre vie ?</div>
         </div>
-        <div style="background:#151821;border:1px solid #2a2d3a;padding:12px;border-radius:4px;font-size:12px;line-height:1.8;color:#e2e4ef">
-          ✓ Accès à vie aux modules vidéo<br>✓ Live bi-hebdo + groupe privé<br>✓ Garantie remboursement 14 jours<br>✓ Résultat: 500-1000€/mois revenu complémentaire
+        <div class="sc">
+          <div class="sl">Sandrine</div>
+          <div class="st">Vous devenez qui ? Qu'est-ce que les gens autour de vous voient de différent ?</div>
+        </div>
+        <div class="silence">🔵 Laisser le prospect visualiser. Ne pas couper.</div>
+        <div class="sc">
+          <div class="sl">Sandrine — Qualification</div>
+          <div class="st">Sur une échelle de 1 à 10, à quel point vous êtes motivé à changer de situation maintenant — pas dans 6 mois, maintenant ?</div>
+        </div>
+        <div class="bif">
+          <div class="bq">Score de motivation ?</div>
+          <div class="bbs">
+            <button class="bc" onclick="bif(this,'p5r1')">7-10 (élevé)</button>
+            <button class="bc" onclick="bif(this,'p5r2')">4-6 (moyen)</button>
+            <button class="bc" onclick="bif(this,'p5r3')">1-3 (faible)</button>
+          </div>
+          <div id="p5r1" class="br">→ Excellent. Passer directement à l'offre.</div>
+          <div id="p5r2" class="br">→ "Qu'est-ce qui vous retient ? Qu'est-ce qui manque pour que ce soit un 9 ou 10 ?"</div>
+          <div id="p5r3" class="br">→ Signal d'alarme. Creuser à nouveau la douleur ou raccourcir l'appel avec dignité.</div>
+        </div>
+        <div class="acts">
+          <button class="an" onclick="showP('offre')">Présenter l'offre →</button>
+          <button class="ao" onclick="showP('obj')">Objection</button>
         </div>
       </div>
+
+      <!-- OFFRE -->
+      <div id="offre" class="panel">
+        <div class="badge">Phase Offre · Présentation adaptée</div>
+        <div id="offre-content">
+          <div class="sc">
+            <div class="sl">Sandrine — Transition</div>
+            <div class="st">Voilà. Chez Alegria, on accompagne exactement des profils comme le vôtre. Et ce qu'on va faire, c'est vous montrer comment on peut vous aider à atteindre <span id="offre-objectif" style="color:#2ecc71">[objectif du prospect]</span> — concrètement, rapidement.</div>
+          </div>
+          <div id="offre-recommandee" style="background:#1e2033;border:1px solid #7c3aed;padding:14px;border-radius:4px;margin:12px 0">
+            <div style="color:#a78bfa;font-weight:600;margin-bottom:8px;font-size:13px">💡 Offre recommandée selon le profil</div>
+            <div id="offre-detail" style="color:#e2e4ef;font-size:12px;line-height:1.7">Chargez un profil pour voir l'offre recommandée.</div>
+          </div>
+          <div style="background:#1e2033;border:1px solid #2a2d3a;padding:12px;border-radius:4px;font-size:12px;margin-bottom:12px">
+            <div style="color:#a78bfa;font-weight:600;margin-bottom:10px">Les 3 offres Alegria</div>
+            <div style="margin-bottom:10px">
+              <div style="color:#e2e4ef;font-weight:600">✦ AI & NoCode Success Program <span class="offre-badge offre-success">1 997€</span></div>
+              <div style="color:#6b7095;font-size:11px;margin-top:4px">145h · 3/6/9 mois · Paiement 3× 666€ ou 4× 499€</div>
+              <div style="color:#6b7095;font-size:11px">→ Salarié, budget serré, revenu complémentaire visé</div>
+            </div>
+            <div style="margin-bottom:10px">
+              <div style="color:#e2e4ef;font-weight:600">✦ AI & NoCode Incubator Program <span class="offre-badge offre-incubator">5 000€</span></div>
+              <div style="color:#6b7095;font-size:11px;margin-top:4px">114h · 12 mois · 100h coaching · CA visé 10k€</div>
+              <div style="color:#6b7095;font-size:11px">→ Entrepreneur/dirigeant, revenus corrects, veut scaler</div>
+            </div>
+            <div>
+              <div style="color:#e2e4ef;font-weight:600">✦ AI & NoCode Mentoring Program <span class="offre-badge offre-mentoring">10 000€</span></div>
+              <div style="color:#6b7095;font-size:11px;margin-top:4px">196h · 12 mois · 112h coaching + 12h individuel · CA visé 20k€</div>
+              <div style="color:#6b7095;font-size:11px">→ Dirigeant PME, revenus élevés, coaching individuel souhaité</div>
+            </div>
+          </div>
+          <div class="sc">
+            <div class="sl">Sandrine — Fermeture offre</div>
+            <div class="st">Est-ce que vous avez des questions sur le programme ? Qu'est-ce qui vous parle le plus dans ce que je viens de vous présenter ?</div>
+          </div>
+          <div class="silence">🔵 Silence — laisser le prospect réagir.</div>
+        </div>
+        <div class="acts">
+          <button class="an" onclick="showP('obj')">Gérer objections →</button>
+        </div>
+      </div>
+
+      <!-- OBJECTIONS -->
       <div id="obj" class="panel">
-        <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">Objections</h2>
+        <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">Objections & réponses</h2>
+
         <div class="acc">
-          <div class="ach on" onclick="ac(this)"><span class="at">#1 — Budget / prêt étudiant</span><span>▼</span></div>
+          <div class="ach on" onclick="ac(this)"><span class="at">#1 — "Je dois réfléchir"</span><span>▼</span></div>
           <div class="acb on">
-            <div style="margin-bottom:8px"><strong style="color:#a78bfa">Valider:</strong> "Je comprends. T'es prudent financièrement. C'est intelligent."</div>
-            <div style="margin-bottom:8px"><strong style="color:#a78bfa">Reframer:</strong> "C'est un investissement. En 3 semaines tu génères 666€. C'est payé."</div>
-            <div style="margin-bottom:8px"><strong style="color:#a78bfa">Plan light:</strong> "En 4×, c'est 499€/mois. Moins de 17€/jour."</div>
-            <div><strong style="color:#a78bfa">Fermer:</strong> "Attendre 5 ans, ça ne va jamais arriver. Commence aujourd'hui."</div>
+            <strong style="color:#a78bfa">Étape 1:</strong> "Qu'est-ce qui fait qu'il y a 2 minutes vous étiez motivé et maintenant vous avez besoin de réfléchir — qu'est-ce qui a changé ?"<br><br>
+            <strong style="color:#a78bfa">Étape 2:</strong> "Depuis combien de temps vous utilisez ce processus de décision ? Où est-ce que ça vous mène jusqu'ici ?"<br><br>
+            <strong style="color:#a78bfa">Étape 3:</strong> Donner un délai &lt;48h pour la décision.
           </div>
         </div>
+
         <div class="acc">
-          <div class="ach" onclick="ac(this)"><span class="at">#2 — Veux essayer gratuitement</span><span>▼</span></div>
-          <div class="acb">"Le contenu gratuit existe, mais 6 mois pour tourner en rond. Avec nous: coach, communauté, résultats en 8 semaines."</div>
+          <div class="ach" onclick="ac(this)"><span class="at">#2 — "C'est trop cher"</span><span>▼</span></div>
+          <div class="acb">
+            <strong style="color:#a78bfa">Étape 1:</strong> "Si on met l'investissement de côté — est-ce que vous êtes motivé à avancer vers vos objectifs à 100% avec nous ?"<br><br>
+            <strong style="color:#a78bfa">Si oui:</strong> "Quelles solutions s'offrent à vous pour avancer avec nous maintenant ?" → Proposer 3× ou 4×<br><br>
+            <strong style="color:#a78bfa">Rappel:</strong> En 3×, c'est 666€/mois — soit 22€/jour. En 4×, c'est 499€/mois — soit moins de 17€/jour.<br><br>
+            <strong style="color:#a78bfa">Urgence:</strong> "Il y a 6 mois, vous auriez pu l'avoir à un tarif inférieur. Le tarif monte. Avant le 10, vous me dites."
+          </div>
         </div>
+
         <div class="acc">
-          <div class="ach" onclick="ac(this)"><span class="at">#3 — Pas sûr que ça marche pour moi</span><span>▼</span></div>
-          <div class="acb">"80%+ génèrent du revenu en 8 semaines. Garantie 14 jours remboursé."</div>
+          <div class="ach" onclick="ac(this)"><span class="at">#3 — "Je n'ai pas les fonds disponibles"</span><span>▼</span></div>
+          <div class="acb">
+            <strong style="color:#a78bfa">Étape 1:</strong> "On a été transparent depuis le début. Dites-moi, qu'est-ce qui bloque vraiment ?"<br><br>
+            <strong style="color:#a78bfa">Étape 2:</strong> Modalités de paiement — 3× 666€ ou 4× 499€. Vérifier le plafond CB.<br><br>
+            <strong style="color:#a78bfa">CPF:</strong> Si le prospect a du CPF, orienter vers la passerelle certifiante RNCP 37873.
+          </div>
         </div>
+
         <div class="acc">
-          <div class="ach" onclick="ac(this)"><span class="at">#4 — Je dois réfléchir</span><span>▼</span></div>
-          <div class="acb">"Tu réfléchis à quoi exactement ? Au montant ? Dis-moi ce qui freine."</div>
+          <div class="ach" onclick="ac(this)"><span class="at">#4 — "Je dois en parler à mon conjoint"</span><span>▼</span></div>
+          <div class="acb">
+            <strong style="color:#a78bfa">Étape 1:</strong> "Bien sûr. Est-ce que vous pouvez l'appeler maintenant ? On peut l'inclure dans la conversation."<br><br>
+            <strong style="color:#a78bfa">Étape 2:</strong> "Qu'est-ce que vous pensez qu'il/elle va dire ? Quelles sont ses inquiétudes probables ?"<br><br>
+            <strong style="color:#a78bfa">Étape 3:</strong> Fixer un RDV avec le conjoint présent — pas de closing sans le décisionnaire.
+          </div>
+        </div>
+
+        <div class="acc">
+          <div class="ach" onclick="ac(this)"><span class="at">#5 — "Pas sûr que ça marche pour moi"</span><span>▼</span></div>
+          <div class="acb">
+            <strong style="color:#a78bfa">Méthode Napoléonienne:</strong> "Donnez-moi les points positifs que vous voyez à l'accompagnement. Maintenant les points moins positifs. Vos objectifs correspondent à ceux du programme ?"<br><br>
+            <strong style="color:#a78bfa">Méthode Einstein:</strong> "Einstein disait : la folie c'est de répéter les mêmes actions et espérer un résultat différent. Pensez-vous atteindre vos objectifs en continuant comme maintenant ?"<br><br>
+            <strong style="color:#a78bfa">Garantie:</strong> "Je trouve une solution sans risque — on a une garantie 14 jours remboursé."
+          </div>
+        </div>
+
+        <div class="acc">
+          <div class="ach" onclick="ac(this)"><span class="at">#6 — "Je veux comparer avec d'autres formations"</span><span>▼</span></div>
+          <div class="acb">
+            <strong style="color:#a78bfa">Étape 1:</strong> "Qu'est-ce que vous cherchez à valider — le prix, le contenu, ou autre chose ?"<br><br>
+            <strong style="color:#a78bfa">Différenciateur:</strong> "Alegria est certifiée RNCP Niveau 6 — la plupart des concurrents ne certifient pas. C'est un avantage concret sur votre CV."<br><br>
+            <strong style="color:#a78bfa">Deadline:</strong> "Je vous laisse 48h. Jeudi, vous me rappelez ou je vous rappelle. Au-delà, je ne peux plus garantir ce tarif."
+          </div>
+        </div>
+
+        <div class="acc">
+          <div class="ach" onclick="ac(this)"><span class="at">#7 — Dernier recours (anti-vente)</span><span>▼</span></div>
+          <div class="acb">
+            <strong style="color:#e05a2b">Anti-vente:</strong> "Écoutez, je pense que je me suis trompé sur votre profil — c'est moi qui vais prendre la décision de ne pas vous accompagner. Bonne continuation."<br><br>
+            <strong style="color:#a78bfa">→ SILENCE. Ne pas parler.</strong>
+          </div>
         </div>
       </div>
+
+      <!-- CHECKLIST -->
       <div id="check" class="panel">
         <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">Checklist</h2>
         <div class="st2">Avant l'appel</div>
+        <label class="ci"><input type="checkbox"><span class="cl">Lead chargé dans l'outil (+ Nouveau lead)</span></label>
         <label class="ci"><input type="checkbox"><span class="cl">Deepgram actif (REC à droite)</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">Stéréo Mix activé (capture Google Meet)</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">Profil Muhammad revu</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Google Meet ouvert — haut-parleurs sur CABLE Input (VB-Audio)</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Profil lead revu (douleur, objection prioritaire, offre recommandée)</span></label>
         <div class="st2">Pendant l'appel</div>
-        <label class="ci"><input type="checkbox"><span class="cl">Phase 1: reprendre ses mots exacts</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">Phase 2: creuser le revenu cible</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">Phase 3: 3 piliers + rapidité</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">Phase 4: 3× ou 4×</span></label>
-        <div class="st2">Vigilances</div>
-        <label class="ci"><input type="checkbox"><span class="cl">⚠️ Budget = #1 objection</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">✓ OUI → lien paiement immédiat</span></label>
-        <label class="ci"><input type="checkbox"><span class="cl">✓ RÉFLÉCHIR → relance 48h</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 1: Briser la glace + cadrer l'appel</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 2: Creuser la douleur (3 couches: externe, interne, identitaire)</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 3: Amplifier (et si rien ne change…)</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 4: Créer le gap (situation actuelle vs vision)</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 5: Vision + score de motivation /10</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Offre: Présenter l'offre recommandée avec SES mots</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Closing: Gérer les objections avec les scripts</span></label>
+        <div class="st2">CTA finaux</div>
+        <label class="ci"><input type="checkbox"><span class="cl">✓ OUI → lien de paiement immédiat + vérifier plafond CB</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">✓ RÉFLÉCHIR → fixer rappel &lt;48h</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">✓ CONJOINT → replanifier avec conjoint présent</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">✓ CPF → vérifier solde + orienter certification RNCP</span></label>
       </div>
+
     </div>
+
+    <!-- PANEL DROIT TRANSCRIPTION -->
     <div class="right">
       <div class="rh">
         Deepgram Live
         <div class="rbtns">
           <button class="rb rec" onclick="startRec()">REC</button>
           <button class="rb" onclick="stopRec()">STOP</button>
-          <button class="rb" onclick="clearTx()">CLEAR</button>
+          <button class="rb" onclick="clearTx()">CLR</button>
         </div>
       </div>
       <div class="rc" id="tx">
-        <div style="color:#6b7095;font-style:italic">En attente d'enregistrement...</div>
+        <div style="color:#6b7095;font-style:italic">En attente...</div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- MODAL NOUVEAU LEAD -->
+<div class="modal-overlay" id="modal" style="display:none">
+  <div class="modal">
+    <h2>➕ Nouveau lead</h2>
+    <div class="modal-tabs">
+      <button class="modal-tab on" onclick="switchTab('transcription',this)">📋 Transcription setting</button>
+      <button class="modal-tab" onclick="switchTab('basique',this)">✏️ Infos basiques</button>
+      <button class="modal-tab" onclick="switchTab('blind',this)">🎯 Blind (RDV Calendly)</button>
+    </div>
+
+    <!-- TAB TRANSCRIPTION -->
+    <div id="tab-transcription" class="modal-section on">
+      <label>Colle la transcription ou le résumé de l'appel de setting</label>
+      <textarea id="transcription-input" placeholder="Colle ici la transcription complète ou le résumé de l'appel de setting..."></textarea>
+      <button class="btn-primary" onclick="analyzeTranscription()">🤖 Analyser et charger le profil</button>
+    </div>
+
+    <!-- TAB BASIQUE -->
+    <div id="tab-basique" class="modal-section">
+      <label>Prénom</label>
+      <input type="text" id="b-prenom" placeholder="Prénom du prospect">
+      <label>Situation professionnelle</label>
+      <input type="text" id="b-situation" placeholder="Ex: Salarié CDI, 35k€/an, manager IT">
+      <label>Douleur principale</label>
+      <input type="text" id="b-douleur" placeholder="Ex: Veut quitter son emploi, se sent étouffé">
+      <label>Objectif</label>
+      <input type="text" id="b-objectif" placeholder="Ex: Créer 1000€/mois de revenu complémentaire">
+      <label>Objection probable</label>
+      <input type="text" id="b-objection" placeholder="Ex: Budget serré, doit réfléchir">
+      <button class="btn-primary" onclick="loadBasique()">Charger le profil</button>
+    </div>
+
+    <!-- TAB BLIND -->
+    <div id="tab-blind" class="modal-section">
+      <label>Prénom (si disponible)</label>
+      <input type="text" id="blind-prenom" placeholder="Prénom ou 'Inconnu'">
+      <div style="background:#1e2033;border:1px solid #2a2d3a;padding:12px;border-radius:4px;margin:12px 0;font-size:12px;color:#6b7095;line-height:1.6">
+        <strong style="color:#a78bfa">Mode Blind activé</strong><br>
+        L'outil va utiliser un profil générique Alegria. Claude analysera les réponses en temps réel et adaptera les scripts automatiquement pendant l'appel.
+      </div>
+      <button class="btn-primary" onclick="loadBlind()">Démarrer en mode Blind</button>
+    </div>
+
+    <div id="modal-loading" class="loading" style="display:none">
+      <div style="font-size:20px;margin-bottom:8px">🤖</div>
+      Analyse du profil en cours...
+    </div>
+
+    <button class="btn-secondary" style="margin-top:12px;width:100%" onclick="closeModal()">Annuler</button>
+  </div>
+</div>
+
 <script>
 const DG_KEY='a8ac0fcef764629fd68fa45a3ba19f996747f3f4';
+const PROXY_URL='https://alegria-proxy.romariesandrine.workers.dev/';
+
 let isRec=false,socket=null,txBuf='',aTimer=null,audioCtx=null,processor=null,stream=null,interimDiv=null;
+let leadProfile={prenom:'',situation:'',douleur:'',objectif:'',objection:'',offre:'success',score_motivation:0,type_profil:'',mots_cles:[]};
 
 function show(id,btn){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
@@ -279,7 +504,7 @@ function showP(id){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
   document.getElementById(id).classList.add('on');
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
-  const map={'profil':0,'p1':1,'p2':2,'p3':3,'p4':4,'offre':5,'obj':6,'check':7};
+  const map={'profil':0,'p1':1,'p2':2,'p3':3,'p4':4,'p5':5,'offre':6,'obj':7,'check':8};
   const btns=document.querySelectorAll('.nb');
   if(map[id]!==undefined)btns[map[id]].classList.add('on');
 }
@@ -296,9 +521,169 @@ function ac(hdr){
   hdr.nextElementSibling.classList.toggle('on');
 }
 
+function openModal(){document.getElementById('modal').style.display='flex';}
+function closeModal(){document.getElementById('modal').style.display='none';}
+function switchTab(tab,btn){
+  document.querySelectorAll('.modal-section').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.modal-tab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('tab-'+tab).classList.add('on');
+  btn.classList.add('on');
+}
+
+async function analyzeTranscription(){
+  const txt=document.getElementById('transcription-input').value.trim();
+  if(!txt){alert('Colle une transcription d\'abord.');return;}
+  document.getElementById('modal-loading').style.display='block';
+
+  try{
+    const res=await fetch(PROXY_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-haiku-4-5-20251001',
+        max_tokens:1000,
+        messages:[{role:'user',content:`Tu es l'assistant de closing d'Alegria Academy. Analyse cette transcription d'appel de setting et extrait les informations clés.
+
+TRANSCRIPTION:
+${txt}
+
+Réponds UNIQUEMENT en JSON valide:
+{
+  "prenom": "prénom du prospect",
+  "situation": "situation professionnelle complète",
+  "salaire": "salaire ou revenus mentionnés",
+  "douleur": "douleur principale en 1 phrase avec SES mots",
+  "objectif": "objectif chiffré ou à construire",
+  "objection_principale": "objection la plus probable selon le profil",
+  "type_profil": "Salarié étouffé|Entrepreneur bloqué|Rêveur paralysé|Analytique|Émotionnel|Sceptique",
+  "offre_recommandee": "success|incubator|mentoring",
+  "raison_offre": "pourquoi cette offre en 1 phrase",
+  "score_motivation": 5,
+  "mots_cles": ["mot1","mot2","mot3"],
+  "decisionnaire": "seul|conjoint|autre",
+  "date_rdv": "date et heure si mentionnée"
+}`}]
+      })
+    });
+    const data=await res.json();
+    const profile=JSON.parse(data.content[0].text.trim().replace(/\`\`\`json|\`\`\`/g,''));
+    loadProfile(profile);
+  }catch(err){
+    console.error(err);
+    alert('Erreur lors de l\'analyse. Réessaie.');
+  }
+  document.getElementById('modal-loading').style.display='none';
+}
+
+function loadBasique(){
+  const profile={
+    prenom:document.getElementById('b-prenom').value||'Lead',
+    situation:document.getElementById('b-situation').value||'Non renseigné',
+    douleur:document.getElementById('b-douleur').value||'Non renseignée',
+    objectif:document.getElementById('b-objectif').value||'Non renseigné',
+    objection_principale:document.getElementById('b-objection').value||'Budget',
+    type_profil:'Salarié étouffé',
+    offre_recommandee:'success',
+    raison_offre:'Profil basique — à déterminer pendant l\'appel',
+    score_motivation:5,
+    mots_cles:[],
+    decisionnaire:'seul'
+  };
+  loadProfile(profile);
+}
+
+function loadBlind(){
+  const prenom=document.getElementById('blind-prenom').value||'Lead';
+  const profile={
+    prenom:prenom,
+    situation:'Inconnu — mode blind',
+    douleur:'À découvrir pendant l\'appel',
+    objectif:'À construire pendant l\'appel',
+    objection_principale:'À déterminer',
+    type_profil:'Inconnu',
+    offre_recommandee:'success',
+    raison_offre:'Mode blind — s\'adaptera en temps réel',
+    score_motivation:5,
+    mots_cles:[],
+    decisionnaire:'inconnu'
+  };
+  loadProfile(profile);
+}
+
+function loadProfile(profile){
+  leadProfile={...leadProfile,...profile};
+  renderProfile(profile);
+  updateScripts(profile);
+  closeModal();
+  showP('profil');
+}
+
+function renderProfile(p){
+  const offreLabels={success:'AI & NoCode Success Program — 1 997€',incubator:'AI & NoCode Incubator Program — 5 000€',mentoring:'AI & NoCode Mentoring Program — 10 000€'};
+  const offreBadges={success:'offre-success',incubator:'offre-incubator',mentoring:'offre-mentoring'};
+  const offreColors={success:'#a78bfa',incubator:'#e0a82b',mentoring:'#2ecc71'};
+
+  document.getElementById('profil-content').innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2a2d3a">
+      <div>
+        <div style="font-size:18px;font-weight:600">${p.prenom||'Lead'} <span class="offre-badge ${offreBadges[p.offre_recommandee||'success']}">${offreLabels[p.offre_recommandee||'success']}</span></div>
+        <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
+          ${p.type_profil?`<span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">${p.type_profil}</span>`:''}
+          ${p.decisionnaire?`<span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">Décision: ${p.decisionnaire}</span>`:''}
+        </div>
+      </div>
+      <div style="font-size:11px;color:#6b7095;text-align:right">${p.date_rdv||''}</div>
+    </div>
+    <div class="alert-bar"><strong style="color:#fff">⚠️ Objection prioritaire:</strong> ${p.objection_principale||'À déterminer'}</div>
+    <div class="mt">
+      <div class="mc"><div class="ml">Motivation</div><div class="mb"><div class="mf" style="width:${(p.score_motivation||5)*10}%"></div></div><div class="mv">${p.score_motivation||5}/10</div></div>
+      <div class="mc"><div class="ml">Urgence</div><div class="mb"><div class="mf" style="width:60%"></div></div><div class="mv">~6/10</div></div>
+      <div class="mc"><div class="ml">Clarté</div><div class="mb"><div class="mf" style="width:50%"></div></div><div class="mv">~5/10</div></div>
+      <div class="mc"><div class="ml">Budget</div><div class="mb"><div class="mf" style="width:${p.offre_recommandee==='mentoring'?90:p.offre_recommandee==='incubator'?65:40}%"></div></div><div class="mv">${p.offre_recommandee==='mentoring'?'Élevé':p.offre_recommandee==='incubator'?'Moyen':'Serré'}</div></div>
+    </div>
+    <div style="background:#151821;border:1px solid #2a2d3a;padding:12px;border-radius:4px;font-size:12px;color:#6b7095;line-height:1.8">
+      <p><strong style="color:#a78bfa">Situation:</strong> ${p.situation||'Non renseignée'}</p>
+      ${p.salaire?`<p style="margin-top:6px"><strong style="color:#a78bfa">Revenus:</strong> ${p.salaire}</p>`:''}
+      <p style="margin-top:6px"><strong style="color:#a78bfa">Douleur:</strong> ${p.douleur||'À découvrir'}</p>
+      <p style="margin-top:6px"><strong style="color:#a78bfa">Objectif:</strong> ${p.objectif||'À construire'}</p>
+      ${p.mots_cles&&p.mots_cles.length?`<p style="margin-top:6px"><strong style="color:#a78bfa">Mots clés:</strong> "${p.mots_cles.join('" · "')}"</p>`:''}
+      ${p.raison_offre?`<p style="margin-top:6px"><strong style="color:${offreColors[p.offre_recommandee||'success']}">Offre recommandée:</strong> ${p.raison_offre}</p>`:''}
+    </div>
+  `;
+
+  const offreDetails={
+    success:`<strong>AI & NoCode Success Program — 1 997€ TTC</strong><br>
+      · 145h sur 3, 6 ou 9 mois<br>
+      · Paiement: 1× 1 997€ · 3× 666€ (22€/jour) · 4× 499€ (17€/jour)<br>
+      · Profil: ${p.situation||'salarié'} — objectif: ${p.objectif||'revenu complémentaire'}<br>
+      · Argument clé: "Vous commencez à générer du revenu PENDANT la formation, pas après."`,
+    incubator:`<strong>AI & NoCode Incubator Program — 5 000€ TTC</strong><br>
+      · 114h sur 12 mois + 100h coaching<br>
+      · CA visé: 10 000€ sur 12 mois<br>
+      · Inclus: Discord 12 mois, Live Building, Coaching Business Francis LELONG<br>
+      · Argument clé: "Vous avez un objectif de CA sérieux — l'Incubator vous donne le cadre et le réseau pour l'atteindre."`,
+    mentoring:`<strong>AI & NoCode Mentoring Program — 10 000€ TTC</strong><br>
+      · 196h sur 12 mois + 112h coaching + 12h coaching individuel<br>
+      · CA visé: 20 000€ sur 12 mois<br>
+      · Inclus: Coach personnel dédié, Discord à vie<br>
+      · Argument clé: "Vous avez les moyens d'aller vite. Le Mentoring vous donne un coach personnel qui vous accompagne semaine par semaine."`
+  };
+  document.getElementById('offre-detail').innerHTML=offreDetails[p.offre_recommandee||'success'];
+}
+
+function updateScripts(p){
+  document.querySelectorAll('.lead-prenom').forEach(el=>el.textContent=p.prenom||'[Prénom]');
+  if(p.douleur)document.getElementById('douleur-recap').textContent='"'+p.douleur+'"';
+  if(p.objectif){
+    document.getElementById('vision-recap').textContent='"'+p.objectif+'"';
+    document.getElementById('vision-detail').textContent=p.objectif;
+    document.getElementById('offre-objectif').textContent=p.objectif;
+  }
+}
+
 async function startRec(){
   try{
- stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,sampleRate:16000}});
+    stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,sampleRate:16000}});
     document.getElementById('status').innerHTML='<div class="dot"></div><span>Recording...</span>';
     socket=new WebSocket('wss://api.deepgram.com/v1/listen?model=nova-2&language=fr&encoding=linear16&sample_rate=16000&interim_results=true',['token',DG_KEY]);
     socket.onopen=()=>{
@@ -328,7 +713,7 @@ async function startRec(){
         }
       }catch(err){}
     };
-    socket.onerror=()=>{addTx('Erreur connexion Deepgram',true);};
+    socket.onerror=()=>{addTx('Erreur Deepgram',true);};
   }catch(err){alert('Erreur micro: '+err.message);}
 }
 
@@ -369,40 +754,93 @@ function clearTx(){
 
 function triggerAnalysis(){
   if(aTimer)clearTimeout(aTimer);
-  aTimer=setTimeout(()=>{if(txBuf.trim().length>20)runAnalysis(txBuf);},5000);
+  aTimer=setTimeout(()=>{if(txBuf.trim().length>20)runAnalysis(txBuf);},2000);
 }
 
 async function runAnalysis(txt){
+  const profileCtx=`Prospect: ${leadProfile.prenom||'inconnu'}. Situation: ${leadProfile.situation||'inconnue'}. Douleur: ${leadProfile.douleur||'inconnue'}. Objectif: ${leadProfile.objectif||'inconnu'}. Objection probable: ${leadProfile.objection_principale||'inconnue'}. Type profil: ${leadProfile.type_profil||'inconnu'}. Offre recommandée: ${leadProfile.offre_recommandee||'success'}.`;
+
   try{
-  const res=await fetch('https://alegria-proxy.romariesandrine.workers.dev/',{
-  method:'POST',
-  headers:{
-    'Content-Type':'application/json'
-  },
+    const text=await fetch(PROXY_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         model:'claude-haiku-4-5-20251001',
-        max_tokens:500,
-        messages:[{role:'user',content:'Analyse cet extrait de closing avec Muhammad.\nEXTRAIT: "'+txt+'"\nRéponds UNIQUEMENT en JSON: {"phase_actuelle":"Phase X","etape_en_cours":"..","next_question_exact":"..","signaux_positifs":[".."],"signaux_vigilance":[".."],"objection_probable":null,"conseil_immediat":"..","niveau_closing":"chaud|tiède|froid"}'}]
+        max_tokens:600,
+        messages:[{role:'user',content:`Tu es le copilote de closing de Sandrine d'Alegria Academy. Tu guides Sandrine en temps réel pendant son appel de closing.
+
+PROFIL PROSPECT: ${profileCtx}
+
+TRANSCRIPTION EN COURS:
+"${txt}"
+
+STRUCTURE DE L'APPEL ALEGRIA:
+Phase 1: Brisage de glace & cadrage (3-5 min)
+Phase 2: Creusage douleur - 3 couches: externe, interne, identitaire (10-14 min)
+Phase 3: Amplification - et si rien ne change ? (5-8 min)
+Phase 4: Gap - situation actuelle vs vision (5-8 min)
+Phase 5: Vision & qualification - score motivation /10 (5-8 min)
+Phase Offre: Présentation adaptée au profil
+Objections: Gérer avec les scripts
+
+RÈGLE SUPRÊME: Celui qui pose les questions contrôle la décision.
+IMPORTANT: Sandrine vouvoie TOUJOURS les prospects.
+
+Réponds UNIQUEMENT en JSON valide:
+{
+  "phase_actuelle": "Phase X — nom court",
+  "etape_en_cours": "description précise de ce qui vient d'être traité",
+  "passer_phase_suivante": true/false,
+  "signal_passage": "message si prêt à passer — sinon null",
+  "next_question_exact": "formulation exacte mot pour mot en vouvoiement",
+  "transition_phrase": "phrase de transition exacte si changement de phase — sinon null",
+  "signaux_positifs": ["max 2 signaux"],
+  "signaux_vigilance": ["max 2 vigilances"],
+  "objection_probable": "nom de l'objection ou null",
+  "conseil_immediat": "instruction ultra-courte pour Sandrine maintenant",
+  "niveau_closing": "chaud|tiède|froid"
+}`}]
       })
-    });
-   const text=await res.text();
-const data=JSON.parse(text);console.log('DATA:',JSON.stringify(data));
-const raw=data.content[0].text.trim().replace(/```json|```/g,'');
-const a=JSON.parse(raw);
+    }).then(r=>r.text());
+    const data=JSON.parse(text);
+    const raw=data.content[0].text.trim().replace(/\`\`\`json|\`\`\`/g,'');
+    const a=JSON.parse(raw);
     showAnalysis(a);
   }catch(err){console.error('Analysis error',err);}
 }
 
 function showAnalysis(a){
-  let html='<div class="ah"><div><div class="ap">'+a.phase_actuelle+'</div><div style="font-size:10px;color:#6b7095">'+a.etape_en_cours+'</div></div><div class="al">'+(a.niveau_closing||'').toUpperCase()+'</div></div><div class="aa">💥 '+a.conseil_immediat+'</div><div class="aq">"'+a.next_question_exact+'"</div><div class="sigs">';
-  (a.signaux_positifs||[]).forEach(s=>{html+='<span class="sig pos">✓ '+s+'</span>';});
-  (a.signaux_vigilance||[]).forEach(s=>{html+='<span class="sig vig">⚠ '+s+'</span>';});
-  html+='</div>';
-  if(a.objection_probable)html+='<div style="margin-top:8px;padding:6px;background:#12131a;border-left:3px solid #e05a2b;color:#e05a2b;font-size:10px">Objection: <strong>'+a.objection_probable+'</strong></div>';
+  const niveauClass={chaud:'chaud',tiède:'tiede','tiede':'tiede',froid:'froid'}[a.niveau_closing]||'tiede';
+  let html=`<div class="ah">
+    <div>
+      <div class="ap">${a.phase_actuelle}</div>
+      <div style="font-size:10px;color:#6b7095;margin-top:2px">${a.etape_en_cours}</div>
+    </div>
+    <div class="al ${niveauClass}">${(a.niveau_closing||'').toUpperCase()}</div>
+  </div>`;
+
+  if(a.passer_phase_suivante&&a.signal_passage){
+    html+=`<div style="background:#0f3a1a;border-left:3px solid #2ecc71;padding:8px;margin-bottom:8px;color:#2ecc71;font-weight:600;font-size:11px">✅ ${a.signal_passage}</div>`;
+  }
+  if(a.transition_phrase){
+    html+=`<div style="background:#12131a;border-left:3px solid #2ecc71;padding:8px;margin-bottom:8px;color:#2ecc71;font-size:12px">🔀 Transition: "${a.transition_phrase}"</div>`;
+  }
+
+  html+=`<div class="aa">💥 ${a.conseil_immediat}</div>`;
+  html+=`<div class="aq">"${a.next_question_exact}"</div>`;
+  html+=`<div class="sigs">`;
+  (a.signaux_positifs||[]).forEach(s=>{html+=`<span class="sig pos">✓ ${s}</span>`;});
+  (a.signaux_vigilance||[]).forEach(s=>{html+=`<span class="sig vig">⚠ ${s}</span>`;});
+  html+=`</div>`;
+  if(a.objection_probable){
+    html+=`<div style="margin-top:8px;padding:6px;background:#12131a;border-left:3px solid #e05a2b;color:#e05a2b;font-size:10px">Objection probable: <strong>${a.objection_probable}</strong> <button onclick="showP('obj')" style="background:#e05a2b;border:none;color:#fff;padding:1px 6px;border-radius:2px;cursor:pointer;font-size:10px;margin-left:6px">→ Voir</button></div>`;
+  }
+
   const el=document.getElementById('an1');
   el.innerHTML=html;
   el.classList.add('on');
 }
 </script>
+
 </body>
 </html>
