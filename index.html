@@ -298,7 +298,10 @@ function ac(hdr){
 
 async function startRec(){
   try{
-    stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,sampleRate:16000}});
+    const devices = await navigator.mediaDevices.enumerateDevices();
+const vbCable = devices.find(d => d.kind === 'audioinput' && d.label.includes('CABLE'));
+const deviceId = vbCable ? vbCable.deviceId : 'default';
+stream=await navigator.mediaDevices.getUserMedia({audio:{deviceId:{exact:deviceId},echoCancellation:false,noiseSuppression:false,sampleRate:16000}});
     document.getElementById('status').innerHTML='<div class="dot"></div><span>Recording...</span>';
     socket=new WebSocket('wss://api.deepgram.com/v1/listen?model=nova-2&language=fr&encoding=linear16&sample_rate=16000&interim_results=true',['token',DG_KEY]);
     socket.onopen=()=>{
