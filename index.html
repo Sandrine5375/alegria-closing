@@ -374,20 +374,22 @@ function triggerAnalysis(){
 
 async function runAnalysis(txt){
   try{
-    const res=await fetch('https://api.openai.com/v1/chat/completions',{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
-        'Authorization':'Bearer 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'
+        'x-api-key':'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',
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
       },
       body:JSON.stringify({
-        model:'gpt-4o-mini',
+        model:'claude-haiku-4-5-20251001',
         max_tokens:500,
-        messages:[{role:'user',content:'Analyse cet extrait de closing avec Muhammad (gestionnaire, 47k€, prêt étudiant, intéressé IA).\nEXTRAIT: "'+txt+'"\nRéponds UNIQUEMENT en JSON valide: {"phase_actuelle":"Phase X","etape_en_cours":"..","next_question_exact":"..","signaux_positifs":[".."],"signaux_vigilance":[".."],"objection_probable":null,"conseil_immediat":"..","niveau_closing":"chaud|tiède|froid"}'}]
+        messages:[{role:'user',content:'Analyse cet extrait de closing avec Muhammad.\nEXTRAIT: "'+txt+'"\nRéponds UNIQUEMENT en JSON: {"phase_actuelle":"Phase X","etape_en_cours":"..","next_question_exact":"..","signaux_positifs":[".."],"signaux_vigilance":[".."],"objection_probable":null,"conseil_immediat":"..","niveau_closing":"chaud|tiède|froid"}'}]
       })
     });
     const data=await res.json();
-    const raw=data.choices[0].message.content.trim().replace(/```json|```/g,'');
+    const raw=data.content[0].text.trim().replace(/```json|```/g,'');
     const a=JSON.parse(raw);
     showAnalysis(a);
   }catch(err){console.error('Analysis error',err);}
