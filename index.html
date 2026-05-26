@@ -383,7 +383,7 @@ async function runAnalysis(txt){
         'anthropic-dangerous-direct-browser-access':'true'
       },
       body:JSON.stringify({
-        model:'claude-haiku-4-5-20251001',
+        model:'claude-3-5-haiku-20241022',
         max_tokens:500,
         messages:[{role:'user',content:'Analyse cet extrait de closing avec Muhammad.\nEXTRAIT: "'+txt+'"\nRéponds UNIQUEMENT en JSON: {"phase_actuelle":"Phase X","etape_en_cours":"..","next_question_exact":"..","signaux_positifs":[".."],"signaux_vigilance":[".."],"objection_probable":null,"conseil_immediat":"..","niveau_closing":"chaud|tiède|froid"}'}]
       })
