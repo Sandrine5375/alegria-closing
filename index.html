@@ -374,14 +374,11 @@ function triggerAnalysis(){
 
 async function runAnalysis(txt){
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':'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',
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
+  const res=await fetch('https://alegria-proxy.romariesandrine.workers.dev/',{
+  method:'POST',
+  headers:{
+    'Content-Type':'application/json'
+  },
       body:JSON.stringify({
         model:'claude-3-5-haiku-20241022',
         max_tokens:500,
