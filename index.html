@@ -385,7 +385,8 @@ async function runAnalysis(txt){
         messages:[{role:'user',content:'Analyse cet extrait de closing avec Muhammad.\nEXTRAIT: "'+txt+'"\nRéponds UNIQUEMENT en JSON: {"phase_actuelle":"Phase X","etape_en_cours":"..","next_question_exact":"..","signaux_positifs":[".."],"signaux_vigilance":[".."],"objection_probable":null,"conseil_immediat":"..","niveau_closing":"chaud|tiède|froid"}'}]
       })
     });
-    const data=await res.json();
+   const text=await res.text();
+const data=JSON.parse(text);
 const raw=data.content[0].text.trim().replace(/```json|```/g,'');
 const a=JSON.parse(raw);
     showAnalysis(a);
