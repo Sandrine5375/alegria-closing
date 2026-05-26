@@ -386,7 +386,7 @@ async function runAnalysis(txt){
       })
     });
    const text=await res.text();
-const data=JSON.parse(text);
+const data=JSON.parse(text);console.log('DATA:',JSON.stringify(data));
 const raw=data.content[0].text.trim().replace(/```json|```/g,'');
 const a=JSON.parse(raw);
     showAnalysis(a);
