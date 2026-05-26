@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Alegria Closing - Muhammad</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100vh;background:#12131a;color:#e2e4ef;font-family:'Space Grotesk',sans-serif;overflow:hidden}
+.wrap{width:100%;height:100vh;display:flex;flex-direction:column}
+.nav{background:#151821;border-bottom:1px solid #2a2d3a;padding:10px 14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nb{background:transparent;border:1px solid #2a2d3a;color:#e2e4ef;padding:7px 12px;border-radius:4px;cursor:pointer;font-size:12px;font-family:inherit;transition:.2s}
+.nb:hover{border-color:#7c3aed}
+.nb.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.sb{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:11px;color:#a78bfa}
+.dot{width:6px;height:6px;border-radius:50%;background:#e05a2b;animation:pu 1.5s infinite}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
+.body{flex:1;display:flex;gap:10px;padding:10px;overflow:hidden}
+.left{flex:1;overflow-y:auto;padding:16px}
+.left::-webkit-scrollbar{width:3px}
+.left::-webkit-scrollbar-thumb{background:#2a2d3a}
+.right{width:300px;background:#151821;border:1px solid #2a2d3a;border-radius:4px;display:flex;flex-direction:column}
+.rh{background:#1e2033;border-bottom:1px solid #2a2d3a;padding:10px 12px;font-size:11px;font-weight:600;color:#a78bfa;display:flex;justify-content:space-between}
+.rbtns{display:flex;gap:4px}
+.rb{background:transparent;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 8px;border-radius:3px;cursor:pointer;font-size:10px;transition:.2s}
+.rb:hover{border-color:#7c3aed}
+.rb.rec{border-color:#e05a2b;color:#e05a2b}
+.rc{flex:1;overflow-y:auto;padding:10px;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5}
+.rc::-webkit-scrollbar{width:2px}
+.sp{color:#7c3aed;font-weight:600}
+.tx{color:#e2e4ef;margin-bottom:6px}
+.panel{display:none}
+.panel.on{display:block}
+.badge{display:inline-block;background:#1e2033;border:1px solid #7c3aed;color:#a78bfa;padding:4px 10px;border-radius:12px;font-size:11px;margin-bottom:14px}
+.sc{background:#1e2033;border-left:4px solid #7c3aed;padding:12px;margin-bottom:10px;border-radius:4px}
+.sl{color:#7c3aed;font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:5px}
+.st{color:#e2e4ef;line-height:1.5;font-size:13px}
+.tip{background:#0f3a1a;border-left:4px solid #2ecc71;padding:10px;margin:10px 0;border-radius:4px;color:#2ecc71;font-size:12px}
+.warn{background:#3a2f0f;border-left:4px solid #e05a2b;padding:10px;margin:10px 0;border-radius:4px;color:#e05a2b;font-size:12px}
+.bif{background:#151821;border:1px solid #2a2d3a;padding:12px;margin:10px 0;border-radius:4px}
+.bq{color:#a78bfa;font-weight:600;margin-bottom:8px;font-size:12px}
+.bbs{display:flex;gap:6px}
+.bc{flex:1;padding:6px 10px;border:1px solid #2a2d3a;background:transparent;color:#e2e4ef;border-radius:3px;cursor:pointer;font-size:11px;transition:.2s}
+.bc:hover{border-color:#7c3aed}
+.bc.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.br{margin-top:8px;padding:8px;background:#12131a;border-left:2px solid #7c3aed;color:#a78bfa;font-size:12px;display:none}
+.br.on{display:block}
+.acts{display:flex;gap:10px;margin-top:16px;padding-top:12px;border-top:1px solid #2a2d3a}
+.an{flex:1;background:#7c3aed;border:none;color:#fff;padding:10px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit}
+.ao{flex:1;background:transparent;border:1px solid #e05a2b;color:#e05a2b;padding:10px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit}
+.analysis{background:#1e2033;border:2px solid #7c3aed;border-radius:4px;padding:12px;margin-bottom:14px;display:none}
+.analysis.on{display:block}
+.ah{display:flex;justify-content:space-between;margin-bottom:8px}
+.ap{font-weight:600;color:#a78bfa;font-size:12px}
+.al{font-size:10px;color:#6b7095;background:#12131a;padding:2px 6px;border-radius:2px}
+.aa{background:#12131a;border-left:3px solid #e05a2b;padding:8px;margin-bottom:8px;color:#e05a2b;font-weight:600;font-size:11px}
+.aq{background:#12131a;border-left:3px solid #7c3aed;padding:8px;margin-bottom:8px;color:#a78bfa;font-size:12px}
+.sigs{display:flex;gap:6px;flex-wrap:wrap}
+.sig{background:#12131a;border:1px solid #2a2d3a;padding:3px 8px;border-radius:2px;font-size:10px;color:#6b7095}
+.sig.pos{border-color:#2ecc71;color:#2ecc71}
+.sig.vig{border-color:#e05a2b;color:#e05a2b}
+.acc{margin-bottom:10px}
+.ach{background:#1e2033;border:1px solid #2a2d3a;padding:12px;cursor:pointer;border-radius:4px;display:flex;justify-content:space-between;font-size:12px;transition:.2s}
+.ach:hover{border-color:#7c3aed}
+.ach.on{background:#7c3aed;border-color:#7c3aed}
+.at{font-weight:600;color:#a78bfa}
+.ach.on .at{color:#fff}
+.acb{display:none;background:#151821;border:1px solid #2a2d3a;border-top:none;padding:12px;border-radius:0 0 4px 4px;font-size:12px;color:#e2e4ef}
+.acb.on{display:block}
+.mt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.mc{background:#1e2033;border:1px solid #2a2d3a;padding:10px;border-radius:4px;text-align:center}
+.ml{color:#6b7095;font-size:10px;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.mb{background:#12131a;height:4px;border-radius:2px;overflow:hidden;margin-bottom:5px}
+.mf{background:#7c3aed;height:100%}
+.mv{color:#a78bfa;font-size:12px;font-weight:600}
+.alert-bar{background:#7c3aed;border-left:4px solid #a78bfa;padding:10px 12px;border-radius:4px;margin-bottom:14px;font-size:12px}
+.ci{display:flex;align-items:center;gap:10px;padding:10px;margin-bottom:6px;background:#1e2033;border:1px solid #2a2d3a;border-radius:4px}
+.ci input{width:16px;height:16px;cursor:pointer;accent-color:#7c3aed}
+.cl{flex:1;color:#e2e4ef;cursor:pointer;font-size:12px}
+.st2{font-weight:600;color:#a78bfa;margin-top:14px;margin-bottom:8px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <button class="nb on" onclick="show('profil',this)">Profil</button>
+    <button class="nb" onclick="show('p1',this)">Phase 1</button>
+    <button class="nb" onclick="show('p2',this)">Phase 2</button>
+    <button class="nb" onclick="show('p3',this)">Phase 3</button>
+    <button class="nb" onclick="show('p4',this)">Phase 4</button>
+    <button class="nb" onclick="show('offre',this)">Offre</button>
+    <button class="nb" onclick="show('obj',this)">Objections</button>
+    <button class="nb" onclick="show('check',this)">Checklist</button>
+    <div class="sb" id="status">⚫ Standby</div>
+  </div>
+  <div class="body">
+    <div class="left">
+      <div id="profil" class="panel on">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2a2d3a">
+          <div>
+            <div style="font-size:18px;font-weight:600">Muhammad Dine</div>
+            <div style="display:flex;gap:6px;margin-top:6px">
+              <span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">Salarié étouffé</span>
+              <span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">CDI · BP</span>
+              <span style="background:#1e2033;border:1px solid #2a2d3a;color:#a78bfa;padding:3px 10px;border-radius:12px;font-size:11px">47k€</span>
+            </div>
+          </div>
+          <div style="font-size:11px;color:#6b7095">29 mai, 16h (Google Meet)</div>
+        </div>
+        <div class="alert-bar"><strong style="color:#fff">⚠️ Objection prioritaire:</strong> Budget contraint (prêt étudiant)</div>
+        <div class="mt">
+          <div class="mc"><div class="ml">Motivation</div><div class="mb"><div class="mf" style="width:85%"></div></div><div class="mv">8.5/10</div></div>
+          <div class="mc"><div class="ml">Urgence</div><div class="mb"><div class="mf" style="width:60%"></div></div><div class="mv">6/10</div></div>
+          <div class="mc"><div class="ml">Clarté</div><div class="mb"><div class="mf" style="width:45%"></div></div><div class="mv">4.5/10</div></div>
+          <div class="mc"><div class="ml">Budget</div><div class="mb"><div class="mf" style="width:35%"></div></div><div class="mv">3.5/10</div></div>
+        </div>
+        <div style="background:#151821;border:1px solid #2a2d3a;padding:12px;border-radius:4px;font-size:12px;color:#6b7095;line-height:1.6">
+          <p><strong style="color:#a78bfa">Situation:</strong> Gestionnaire financement structuré · CDI 1 an · 47k€/an · Prêt étudiant jusqu'en 2030</p>
+          <p style="margin-top:8px"><strong style="color:#a78bfa">Douleur:</strong> Veut "être en avance sur l'air du temps"</p>
+          <p style="margin-top:8px"><strong style="color:#a78bfa">Objectif:</strong> Revenu complémentaire + compétences IA</p>
+          <p style="margin-top:8px"><strong style="color:#a78bfa">Mots clés:</strong> "en avance sur l'air du temps" · "j'essaie le maximum d'utiliser les IA"</p>
+        </div>
+      </div>
+      <div id="p1" class="panel">
+        <div class="badge">Phase 1 · Confiance · 3-5 min</div>
+        <div id="an1" class="analysis"></div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">Merci Muhammad d'être là. Aujourd'hui je veux te montrer comment on peut t'aider à "être en avance sur l'air du temps" — c'est ce que tu m'as dit.</div></div>
+        <div class="tip">🟢 Reprendre exactement ses mots crée un rapport immédiat.</div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">L'idée c'est de te montrer comment on fonctionne chez Alegria et ce qu'on peut t'apporter pour développer tes compétences IA et créer ce revenu complémentaire.</div></div>
+        <div class="bif">
+          <div class="bq">Budget — sa réaction ?</div>
+          <div class="bbs">
+            <button class="bc" onclick="bif(this,'p1r1')">Reste difficile</button>
+            <button class="bc" onclick="bif(this,'p1r2')">Envie d'explorer</button>
+          </div>
+          <div id="p1r1" class="br">→ "Ok, on va faire ça intelligent. Je vais te montrer comment on travaille et après on verra comment financer. Deal ?"</div>
+          <div id="p1r2" class="br">→ "Super. On va explorer ensemble. Tu auras toutes les infos pour décider. Allons-y."</div>
+        </div>
+        <div class="acts">
+          <button class="an" onclick="showP('p2')">Phase 2 →</button>
+          <button class="ao" onclick="showP('obj')">Objection</button>
+        </div>
+      </div>
+      <div id="p2" class="panel">
+        <div class="badge">Phase 2 · Creusage · 10-14 min</div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">Tu m'as dit que tu "essaies le maximum d'utiliser les IA dans ta vie quotidienne". Dans quoi tu les utilises déjà ?</div></div>
+        <div class="bif">
+          <div class="bq">Ses usages IA ?</div>
+          <div class="bbs">
+            <button class="bc" onclick="bif(this,'p2r1')">ChatGPT, outils génériques</button>
+            <button class="bc" onclick="bif(this,'p2r2')">Juste intérêt</button>
+          </div>
+          <div id="p2r1" class="br">→ "Ok. Ce qu'on va faire c'est aller plus loin — créer de la valeur, des outils qui génèrent du revenu."</div>
+          <div id="p2r2" class="br">→ "Excellent. On va convertir cet intérêt en compétences concrètes et en revenu."</div>
+        </div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">Sur le revenu complémentaire — tu as une idée de la hauteur ? 200€/mois ? 500€ ? 1000€ ?</div></div>
+        <div class="warn">🟠 Il cherchait formation gratuite. Creuse d'abord la motivation.</div>
+        <div class="acts">
+          <button class="an" onclick="showP('p3')">Phase 3 →</button>
+          <button class="ao" onclick="showP('obj')">Objection</button>
+        </div>
+      </div>
+      <div id="p3" class="panel">
+        <div class="badge">Phase 3 · Offre · 8-10 min</div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">Chez Alegria, on forme des gens exactement comme toi à créer du revenu via l'IA et le NoCode. Voilà les 3 piliers:</div></div>
+        <div style="background:#1e2033;border:1px solid #7c3aed;padding:12px;margin:10px 0;border-radius:4px;font-size:12px">
+          <div style="margin-bottom:8px"><strong style="color:#a78bfa">1️⃣ Compétences IA</strong> — Maîtriser les IA, pas juste les utiliser.</div>
+          <div style="margin-bottom:8px"><strong style="color:#a78bfa">2️⃣ NoCode</strong> — Construis des outils. Zapier, Make, Airtable.</div>
+          <div><strong style="color:#a78bfa">3️⃣ Monétisation</strong> — Comment tu vends et tu trouves des clients.</div>
+        </div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">Tu commences à générer du revenu PENDANT la formation, pas après.</div></div>
+        <div class="tip">🟢 Il a un prêt jusqu'en 2030. Insiste sur la rapidité (8 semaines, pas 6 mois).</div>
+        <div class="acts">
+          <button class="an" onclick="showP('p4')">Phase 4 →</button>
+          <button class="ao" onclick="showP('obj')">Objection</button>
+        </div>
+      </div>
+      <div id="p4" class="panel">
+        <div class="badge">Phase 4 · Financement · 8-12 min</div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">Muhammad, ça t'intéresse vraiment ? Tu as des doutes ?</div></div>
+        <div class="bif">
+          <div class="bq">Intérêt ?</div>
+          <div class="bbs">
+            <button class="bc" onclick="bif(this,'p4r1')">Très intéressé</button>
+            <button class="bc" onclick="bif(this,'p4r2')">Hésitant</button>
+          </div>
+          <div id="p4r1" class="br">→ "Super. Notre programme coûte 1 997€ TTC. 3 façons de payer."</div>
+          <div id="p4r2" class="br">→ "Ok, dis-moi ce qui te bloque. On va l'adresser."</div>
+        </div>
+        <div style="background:#1e2033;border:1px solid #7c3aed;padding:12px;margin:10px 0;border-radius:4px;font-size:12px">
+          <div style="margin-bottom:8px"><strong style="color:#a78bfa">💰 1 × 1 997€</strong> — Paiement unique.</div>
+          <div style="margin-bottom:8px"><strong style="color:#a78bfa">📅 3 × 666€</strong> — 22€/jour.</div>
+          <div><strong style="color:#a78bfa">📅 4 × 499€</strong> — Moins de 17€/jour.</div>
+        </div>
+        <div class="sc"><div class="sl">Sandrine</div><div class="st">En 3×, c'est 666€/mois. Au bout de 3 semaines, tu as généré au moins ça en revenu. Deal ?</div></div>
+        <div class="acts">
+          <button class="an" onclick="showP('offre')">Offre →</button>
+          <button class="ao" onclick="showP('obj')">Objection</button>
+        </div>
+      </div>
+      <div id="offre" class="panel">
+        <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">AI & NoCode Success Program</h2>
+        <div style="background:#1e2033;border:1px solid #e05a2b;padding:14px;border-radius:4px;margin-bottom:14px">
+          <div style="color:#e05a2b;font-weight:600;font-size:18px;margin-bottom:10px">1 997€ TTC</div>
+          <div style="color:#e2e4ef;font-size:13px">· 3 × 666€ (22€/jour)<br>· 4 × 499€ (moins de 17€/jour)</div>
+        </div>
+        <div style="background:#151821;border:1px solid #2a2d3a;padding:12px;border-radius:4px;font-size:12px;line-height:1.8;color:#e2e4ef">
+          ✓ Accès à vie aux modules vidéo<br>✓ Live bi-hebdo + groupe privé<br>✓ Garantie remboursement 14 jours<br>✓ Résultat: 500-1000€/mois revenu complémentaire
+        </div>
+      </div>
+      <div id="obj" class="panel">
+        <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">Objections</h2>
+        <div class="acc">
+          <div class="ach on" onclick="ac(this)"><span class="at">#1 — Budget / prêt étudiant</span><span>▼</span></div>
+          <div class="acb on">
+            <div style="margin-bottom:8px"><strong style="color:#a78bfa">Valider:</strong> "Je comprends. T'es prudent financièrement. C'est intelligent."</div>
+            <div style="margin-bottom:8px"><strong style="color:#a78bfa">Reframer:</strong> "C'est un investissement. En 3 semaines tu génères 666€. C'est payé."</div>
+            <div style="margin-bottom:8px"><strong style="color:#a78bfa">Plan light:</strong> "En 4×, c'est 499€/mois. Moins de 17€/jour."</div>
+            <div><strong style="color:#a78bfa">Fermer:</strong> "Attendre 5 ans, ça ne va jamais arriver. Commence aujourd'hui."</div>
+          </div>
+        </div>
+        <div class="acc">
+          <div class="ach" onclick="ac(this)"><span class="at">#2 — Veux essayer gratuitement</span><span>▼</span></div>
+          <div class="acb">"Le contenu gratuit existe, mais 6 mois pour tourner en rond. Avec nous: coach, communauté, résultats en 8 semaines."</div>
+        </div>
+        <div class="acc">
+          <div class="ach" onclick="ac(this)"><span class="at">#3 — Pas sûr que ça marche pour moi</span><span>▼</span></div>
+          <div class="acb">"80%+ génèrent du revenu en 8 semaines. Garantie 14 jours remboursé."</div>
+        </div>
+        <div class="acc">
+          <div class="ach" onclick="ac(this)"><span class="at">#4 — Je dois réfléchir</span><span>▼</span></div>
+          <div class="acb">"Tu réfléchis à quoi exactement ? Au montant ? Dis-moi ce qui freine."</div>
+        </div>
+      </div>
+      <div id="check" class="panel">
+        <h2 style="color:#a78bfa;font-size:14px;margin-bottom:14px">Checklist</h2>
+        <div class="st2">Avant l'appel</div>
+        <label class="ci"><input type="checkbox"><span class="cl">Deepgram actif (REC à droite)</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Stéréo Mix activé (capture Google Meet)</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Profil Muhammad revu</span></label>
+        <div class="st2">Pendant l'appel</div>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 1: reprendre ses mots exacts</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 2: creuser le revenu cible</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 3: 3 piliers + rapidité</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">Phase 4: 3× ou 4×</span></label>
+        <div class="st2">Vigilances</div>
+        <label class="ci"><input type="checkbox"><span class="cl">⚠️ Budget = #1 objection</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">✓ OUI → lien paiement immédiat</span></label>
+        <label class="ci"><input type="checkbox"><span class="cl">✓ RÉFLÉCHIR → relance 48h</span></label>
+      </div>
+    </div>
+    <div class="right">
+      <div class="rh">
+        Deepgram Live
+        <div class="rbtns">
+          <button class="rb rec" onclick="startRec()">REC</button>
+          <button class="rb" onclick="stopRec()">STOP</button>
+          <button class="rb" onclick="clearTx()">CLEAR</button>
+        </div>
+      </div>
+      <div class="rc" id="tx">
+        <div style="color:#6b7095;font-style:italic">En attente d'enregistrement...</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const DG_KEY='a8ac0fcef764629fd68fa45a3ba19f996747f3f4';
+let isRec=false,socket=null,txBuf='',aTimer=null,audioCtx=null,processor=null,stream=null,interimDiv=null;
+
+function show(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+}
+
+function showP(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  const map={'profil':0,'p1':1,'p2':2,'p3':3,'p4':4,'offre':5,'obj':6,'check':7};
+  const btns=document.querySelectorAll('.nb');
+  if(map[id]!==undefined)btns[map[id]].classList.add('on');
+}
+
+function bif(btn,id){
+  btn.parentElement.querySelectorAll('.bc').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  btn.parentElement.parentElement.querySelectorAll('.br').forEach(r=>r.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+}
+
+function ac(hdr){
+  hdr.classList.toggle('on');
+  hdr.nextElementSibling.classList.toggle('on');
+}
+
+async function startRec(){
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,sampleRate:16000}});
+    document.getElementById('status').innerHTML='<div class="dot"></div><span>Recording...</span>';
+    socket=new WebSocket('wss://api.deepgram.com/v1/listen?model=nova-2&language=fr&encoding=linear16&sample_rate=16000&interim_results=true',['token',DG_KEY]);
+    socket.onopen=()=>{
+      audioCtx=new AudioContext({sampleRate:16000});
+      const src=audioCtx.createMediaStreamSource(stream);
+      processor=audioCtx.createScriptProcessor(4096,1,1);
+      processor.onaudioprocess=(e)=>{
+        if(socket.readyState===WebSocket.OPEN){
+          const input=e.inputBuffer.getChannelData(0);
+          const pcm=new Int16Array(input.length);
+          for(let i=0;i<input.length;i++)pcm[i]=Math.max(-32768,Math.min(32767,input[i]*32768));
+          socket.send(pcm.buffer);
+        }
+      };
+      src.connect(processor);
+      processor.connect(audioCtx.destination);
+      isRec=true;
+    };
+    socket.onmessage=(e)=>{
+      try{
+        const data=JSON.parse(e.data);
+        const txt=data?.channel?.alternatives?.[0]?.transcript;
+        const isFinal=data?.is_final;
+        if(txt&&txt.trim()){
+          addTx(txt,isFinal);
+          if(isFinal){txBuf+=txt+' ';triggerAnalysis();}
+        }
+      }catch(err){}
+    };
+    socket.onerror=()=>{addTx('Erreur connexion Deepgram',true);};
+  }catch(err){alert('Erreur micro: '+err.message);}
+}
+
+function addTx(txt,isFinal){
+  const container=document.getElementById('tx');
+  if(!isFinal){
+    if(!interimDiv){
+      interimDiv=document.createElement('div');
+      interimDiv.className='tx';
+      interimDiv.style.color='#6b7095';
+      interimDiv.style.fontStyle='italic';
+      container.appendChild(interimDiv);
+    }
+    interimDiv.textContent=txt;
+  }else{
+    if(interimDiv){interimDiv.remove();interimDiv=null;}
+    const div=document.createElement('div');
+    div.className='tx';
+    div.innerHTML='<span class="sp">Live:</span> '+txt;
+    container.appendChild(div);
+    container.scrollTop=container.scrollHeight;
+  }
+}
+
+function stopRec(){
+  if(processor){processor.disconnect();processor=null;}
+  if(audioCtx){audioCtx.close();audioCtx=null;}
+  if(socket){socket.close();socket=null;}
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}
+  isRec=false;
+  document.getElementById('status').innerHTML='⚫ Standby';
+}
+
+function clearTx(){
+  document.getElementById('tx').innerHTML='<div style="color:#6b7095;font-style:italic">En attente...</div>';
+  txBuf='';interimDiv=null;
+}
+
+function triggerAnalysis(){
+  if(aTimer)clearTimeout(aTimer);
+  aTimer=setTimeout(()=>{if(txBuf.trim().length>20)runAnalysis(txBuf);},5000);
+}
+
+async function runAnalysis(txt){
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:500,
+        messages:[{role:'user',content:'Analyse cet extrait de closing avec Muhammad (gestionnaire, 47k€, prêt étudiant, intéressé IA).\nEXTRAIT: "'+txt+'"\nRéponds UNIQUEMENT en JSON valide: {"phase_actuelle":"Phase X","etape_en_cours":"..","next_question_exact":"..","signaux_positifs":[".."],"signaux_vigilance":[".."],"objection_probable":null,"conseil_immediat":"..","niveau_closing":"chaud|tiède|froid"}'}]
+      })
+    });
+    const data=await res.json();
+    const raw=data.content[0].text.trim().replace(/```json|```/g,'');
+    const a=JSON.parse(raw);
+    showAnalysis(a);
+  }catch(err){console.error('Analysis error',err);}
+}
+
+function showAnalysis(a){
+  let html='<div class="ah"><div><div class="ap">'+a.phase_actuelle+'</div><div style="font-size:10px;color:#6b7095">'+a.etape_en_cours+'</div></div><div class="al">'+(a.niveau_closing||'').toUpperCase()+'</div></div><div class="aa">💥 '+a.conseil_immediat+'</div><div class="aq">"'+a.next_question_exact+'"</div><div class="sigs">';
+  (a.signaux_positifs||[]).forEach(s=>{html+='<span class="sig pos">✓ '+s+'</span>';});
+  (a.signaux_vigilance||[]).forEach(s=>{html+='<span class="sig vig">⚠ '+s+'</span>';});
+  html+='</div>';
+  if(a.objection_probable)html+='<div style="margin-top:8px;padding:6px;background:#12131a;border-left:3px solid #e05a2b;color:#e05a2b;font-size:10px">Objection: <strong>'+a.objection_probable+'</strong></div>';
+  const el=document.getElementById('an1');
+  el.innerHTML=html;
+  el.classList.add('on');
+}
+</script>
+</body>
+</html>
